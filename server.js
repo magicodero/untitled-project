@@ -15,14 +15,22 @@ app.get('/', (req, res) => {
     });
 });
 
+const updatePlayerHolz = db.prepare('UPDATE players SET holz = holz + 10 WHERE id = ?');
+const getPlayerResources = db.prepare('SELECT holz, stein FROM players WHERE id = ?');
+
 app.post('/api/hacken', (req, res) => {
     const userId = 1; 
-    db.run("UPDATE players SET holz = holz + 10 WHERE id = ?", [userId], function(err) {
-        if (err) return res.json({ success: false });
-        db.get("SELECT holz, stein FROM players WHERE id = ?", [userId], (err, row) => {
-            res.json({ success: true, neueWerte: row });
-        });
-    });
+    try {
+        // 4. Die bereits vorbereiteten Statements einfach nur noch ausführen (.run, .get, .all)
+        updatePlayerHolz.run(userId);
+        const neueWerte = getPlayerResources.get(userId);
+
+        res.json({ success: true, neueWerte: neueWerte });
+
+    } catch (err) {
+        console.error("DB Fehler:", err.message);
+        res.status(500).json({ success: false, error: "DB Fehler" });
+    }
 });
 
 const PORT = 3000;
