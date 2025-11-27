@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "qassimfarid.ejs-language-support",
+    "mrmlnc.vscode-scss",
+    "sibiraj-s.vscode-scss-formatter",
+    "j69.ejs-beautify",
+    "dbaeumer.vscode-eslint",
+    "michelemelluso.gitignore"
+  ]
+}
