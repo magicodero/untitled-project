@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Browsergame</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Dorf von <%= player.name %></h1>
+        <div class="ressourcen">
+            <div class="res">🌲 Holz: <span id="holz-anzeige"><%= player.holz %></span></div>
+            <div class="res">🪨 Stein: <span id="stein-anzeige"><%= player.stein %></span></div>
+        </div>
+        <div class="actions">
+            <button id="btn-holz-hacken" class="btn">🌲 Holz hacken (+10)</button>
+        </div>
+    </div>
+    <script src="/js/client.js"></script>
+</body>
+</html>
