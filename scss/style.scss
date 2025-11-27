@@ -1,4 +1,5 @@
 $primary: #3498db;
+$primary-lighter: #6da0c2;
 $bg: #ecf0f1;
 $dark: #2c3e50;
 
@@ -25,6 +26,6 @@ body {
     }
     .actions .btn {
         background: $primary; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 1rem;
-        &:hover { background: color.scale($primary, $bg: -18.8191881919%); }
+        &:hover { background: $primary-lighter; }
     }
 }
