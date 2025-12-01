@@ -33,6 +33,17 @@ app.post('/api/hacken', (req, res) => {
     }
 });
 
+//neu
+app.post('/api/steinbrechen', (req, res) => {
+    const userId = 1;
+    db.run("UPDATE players set stein = stein + 10 WHERE ID = ?", [userID], function(err){
+        if(err) return res.json({sucess: false});
+        db.get("SELECT holz, stein FROM players WHERE id = ?",[userId], (err, row) => {
+            res.json({sucess: true, neuewWerte: row});
+        });
+    });
+});
+
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server läuft auf http://localhost:${PORT}`);
