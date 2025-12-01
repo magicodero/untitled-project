@@ -25,7 +25,7 @@ app.use(session({
 
   cookie: {
     // Für die lokale HTTP-Entwicklung `secure` auf `false` setzen!
-    secure: false,
+    secure: true,
     httpOnly: true, // Verhindert, dass das Cookie per JS ausgelesen wird (Schutz vor XSS)
     maxAge: 1000 * 60 * 60 * 6 // 6 Stunden Gültigkeit
   }
