@@ -13,7 +13,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 app.use(express.json());
 
-
 app.use(session({
   // Dies ist der "Secret", der zum Signieren des Session-ID-Cookies verwendet wird.
   // Er sollte eine lange, zufällige Zeichenkette sein.
