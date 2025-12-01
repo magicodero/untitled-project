@@ -46,6 +46,8 @@ Wir haben einen speziellen Befehl, der **Server** und **CSS-Kompilierung** gleic
 npm run dev
 ```
 
+Importiere die Zertifikatsdatei `cert.pem` einmalig in deinem Browser.
+
 Wenn du `[SRV] Server läuft auf http://localhost:3000` siehst, hat es geklappt!
 👉 Öffne jetzt deinen Browser und geh auf: **http://localhost:3000**
 
